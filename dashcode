@@ -1,0 +1,21 @@
+key_dash = keyboard_check_pressed(vk_shift)
+if key_dash
+{
+	var momentum = hsp_walk - oPlayer.prevHsp;
+	hsp_walk =+ momentum * 2;
+	oPlayer.prevHsp = hsp_walk;
+	hsp_walk *= 0.95;
+	dashDuration = 2;
+	if (dashDuration > 0)
+	{
+		dashDuration -= 0.1;
+	}
+	if (dashDuration < 0)
+	{
+		hsp_walk = 2	
+	}
+}
+if (hsp_walk < 2)
+{
+	hsp_walk = 2
+}
