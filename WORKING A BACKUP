@@ -1,0 +1,13 @@
+// dash attempt
+dashCoolDown = max(dashCoolDown -1,0);
+if (dashDuration > 0) vsp = 0
+if (dashDuration = 0) hsp_walk = 2
+var dash = keyboard_check_pressed(vk_shift)
+dashDuration = max(dashDuration - 1, 0)
+if (dashCoolDown <=0){
+	if (dash) {
+	dashDuration = 6;
+	hsp_walk = 50 * dashSpd
+	dashCoolDown = 30
+	}
+}
